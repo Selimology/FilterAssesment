@@ -1,8 +1,7 @@
 import React, { useRef, useState } from 'react';
-import MultiSelectDropdown from '../../components/multiSelectDropdown';
 import { companies } from '../../data/companies';
 import { areas } from '../../data/areas';
-import { Button } from '../../components/button';
+import  {Button,MultiSelectDropdown}  from '../../components';
 import { connect } from 'react-redux';
 import { SelectProps } from 'react-multi-select-component';
 
