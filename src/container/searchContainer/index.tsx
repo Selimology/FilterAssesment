@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react';
 import { companies } from '../../data/companies';
 import { areas } from '../../data/areas';
-import  {Button,MultiSelectDropdown}  from '../../components';
+import  {MultiSelectDropdown}  from '../../components';
 import { connect } from 'react-redux';
 import { SelectProps } from 'react-multi-select-component';
 
@@ -38,20 +38,18 @@ const SearchContainer = ({
             property="state"
           />
           <div className="flex pb-12 flex-row space-x-2">
-            <Button
-              onClick={() => {
-                setArea({ areaSelect, countrySelect });
-              }}
-              text="Search"
-            ></Button>
-            <Button
-              onClick={() => {
+            <button className="p-2 bg-gray-900 text-white w-full rounded" onClick={()=>{setArea({areaSelect,countrySelect})}}>
+              Search
+            </button>
+
+            <button className="p-2 bg-gray-900 text-white w-full rounded"
+            onClick={() => {
                 setArea({ areaSelect: [], countrySelect: [] });
                 companyRef?.current?.clear();
                 stateRef?.current?.clear();
-              }}
-              text="Clear"
-            ></Button>
+              }}>
+Clear
+                </button>
           </div>
         </div>
       </main>
